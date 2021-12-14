@@ -1,6 +1,6 @@
 # socialNetwork
 Basic API handler using ExpressJs
-Technical Test
+Technical Test Teleperformance
 
 Installation guide
 
@@ -30,5 +30,47 @@ Installation guide
 
 	For Posts actions:
 		localhost:8800/api/posts
-
 		To update a post is necessary to have both the userId and the postId
+		
+		
+4. This part of the project can be tested using Postman with the following routes:
+	localhost:8800/api/posts -> To create a post
+		Body: 
+		{
+    			"userId":"61b79c6266ba92917b1bc890",
+    			"desc":"Brb..."
+		}
+	localhost:8800/api/posts/:PostId -> To update the post
+		{
+    			"desc":"Don't copy me Jane!",
+    			"userId":"61b79c6266ba92917b1bc890"
+		}
+	http://localhost:8800/api/auth/register -> To register in the database
+		{
+    			"username": "anyUser",
+    			"email": "anyUser@gmail.com",
+    			"password":"anyPass"
+		}
+	http://localhost:8800/api/auth/login -> To login
+		{
+    			"email":"anyUser@gmail.com",
+    			"password":"12345678"
+		}
+	http://localhost:8800/api/users/61b79c6266ba92917b1bc890/follow -> To follow user
+		{
+    			"userId":"61b77d7d12a3153945faa06e"
+		}
+	http://localhost:8800/api/users/61b79c6266ba92917b1bc890/unfollow -> To unfollow user
+		{
+    			"userId":"61b77d7d12a3153945faa06e"
+		}
+	localhost:8800/api/posts/61b7b87e8ee7f52f3dd3e368/like -> like or dislike post
+		{
+    			"userId":"61b77d7d12a3153945faa06e"
+		}
+	localhost:8800/api/posts/:PostId -> get specific post
+		No body required
+	localhost:8800/api/posts/timeline/all -> get all posts
+		{
+    			"userId":"61b77d7d12a3153945faa06e"
+		}
